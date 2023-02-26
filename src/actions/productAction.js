@@ -22,19 +22,19 @@ export const getProduct =
        let link=""
 
        if(!link) {
-        link=`/api/products?keyword=${keyword}&page=${currentPage}`;   
+        link=`https://server-aoe.vercel.app/api/products?keyword=${keyword}&page=${currentPage}`;   
        }
 
       if (category) {
-        link = `/api/products?keyword=${keyword}&page=${currentPage}&category=${category}`;
+        link = `https://server-aoe.vercel.app/api/products?keyword=${keyword}&page=${currentPage}&category=${category}`;
       }
 
       if (br) {
-        link = `/api/products?keyword=${keyword}&page=${currentPage}&brand=${br}`;
+        link = `https://server-aoe.vercel.app/api/products?keyword=${keyword}&page=${currentPage}&brand=${br}`;
       }
 
       if (colors) {
-        link = `/api/products?keyword=${keyword}&page=${currentPage}&color=${colors}`;
+        link = `https://server-aoe.vercel.app/api/products?keyword=${keyword}&page=${currentPage}&color=${colors}`;
       }
 
 
