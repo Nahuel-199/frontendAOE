@@ -15,7 +15,7 @@ import "./userOptions.css";
 import { logout } from "../../actions/userAction";
 
 const UserOptions = ({ user }) => {
-
+//esto es un ejemplo para subirlo 
     const { cartItems } = useSelector((state) => state.cart);
     
   const [open, setOpen] = useState(false);
