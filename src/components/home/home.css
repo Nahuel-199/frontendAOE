@@ -1,0 +1,227 @@
+.banner {
+  background-image: url("../../images/fondoM.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 70%;
+  background-color: #201b17;
+  height: 100vmin;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  
+  color: white;
+}
+
+.banner > h1 {
+  margin: 5vmax;
+  letter-spacing: 2px;
+  margin-top: -15px;
+}
+
+.banner > p {
+  margin-top: -50px;
+}
+
+.banner > a > button {
+  margin-top: 160px;
+  cursor: pointer;
+  background-color: white;
+  border: 1px solid white;
+  border-radius: 0;
+  padding: 1vmax;
+  transition: all 0.5s;
+  width: 9vmax;
+}
+.banner > a > button:hover {
+  background-color: rgba(255, 255, 255, 0);
+  color: white;
+}
+
+.banner::after {
+  content: "";
+  width: 100vw;
+  height: 100.1vmin;
+  background-color: #ffffff;
+  position: absolute;
+  top: 0%;
+  left: 0;
+  clip-path: polygon(100% 68%, 0 100%, 100% 100%);
+  max-width: 100%;
+}
+
+.homeHeading {
+  text-align: center;
+  border-bottom: 1px solid rgba(21, 21, 21, 0.5);
+  width: 21vmax;
+  padding: 1vmax;
+  margin: 5vmax auto;
+  color: rgb(0, 0, 0, 0.7);
+}
+
+.container {
+  display: flex;
+  margin: 2vmax auto;
+  width: 80vw;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 100%;
+}
+
+.productCard {
+  position: relative;
+  width: 22vmax;
+  height: 445px;
+  text-decoration: none;
+  color: rgb(48, 48, 48);
+  margin: 2vmax;
+  padding-bottom: 0.5vmax;
+  border-radius: 20px;
+  background-color: #122936;
+  overflow: hidden;
+}
+
+.productCard::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  width: 100%;
+  height: 100%;
+  background-color: #2196f3;
+  transform: skewY(345deg);
+  transition: 0.5s;
+}
+
+.productCard:hover::before {
+  top: -70%;
+  transform: skewY(390deg);
+}
+
+.productCard::after {
+  content: "AOE";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  font-weight: 600;
+  font-size: 3em;
+  color: rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.productCard .imgC {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 20px;
+  z-index: 1;
+}
+
+.productCard .imgC img {
+  max-width: 100%;
+  transition: 0, 5s;
+  width: 25vmax;
+}
+
+.productCard:hover .imgC img {
+  max-width: 90%;
+}
+
+.productCard .contentBx {
+  position: relative;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  z-index: 1;
+}
+
+.productCard .contentBx h3 {
+  font-size: 16px;
+  color: #fff;
+  font-weight: 500;
+
+  letter-spacing: 1px;
+}
+
+.productCard .contentBx .priceP {
+  font-size: 24px;
+  color: #fff;
+  font-weight: 500;
+  letter-spacing: 1px;
+  margin-top: 10px;
+}
+
+.productCard .contentBx .buyP {
+  position: relative;
+  top: 200px;
+  opacity: 0;
+  padding: 10px 30px;
+  margin-top: 15px;
+  color: #fff;
+  text-decoration: none;
+  background: #2196f3;
+  border-radius: 30px;
+  letter-spacing: 1px;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.productCard:hover .contentBx .buyP {
+  top: -13px;
+  opacity: 1;
+}
+
+.productCardSpan {
+  margin: 0.5vmax;
+}
+
+.productCard .contentBx .star {
+  margin: 0.5vmax;
+  color: rgb(246, 246, 246);
+}
+
+.productCard:hover {
+  box-shadow: 0 0 5px rgba(15, 15, 15, 0.26);
+  transform: translateY(-1vmax);
+}
+
+@media screen and (max-width: 600px) {
+  .banner {
+    background-size: 115%;
+    background-position: bottom;
+
+  }
+  .banner > h1 {
+    margin: 5vmax;
+    margin-top: 20px;
+    letter-spacing: 2px;
+  }
+
+  .banner > p {
+    margin-top: -35px;
+  }
+
+  .banner > a > button {
+    width: 15vmax;
+    margin-top: 30px;
+  }
+
+  .productCard {
+    width: 44vmax;
+    height: 495px;
+  }
+
+  .productCard .contentBx h3 {
+    font-size: 19px;
+  }
+  .productCard .imgC img {
+    max-width: 100%;
+    width: 46vmax;
+  }
+}
