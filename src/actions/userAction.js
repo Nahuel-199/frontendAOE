@@ -34,7 +34,7 @@ export const login = (email, password) => async(dispatch) => {
         const config = { headers: { "Content-Type": "application/json" } };
 
         const { data } = await axios.post(
-            `https://server-aoe.vercel.app/api/login`,
+            `/api/login`,
             { email, password },
             config
         );
@@ -53,7 +53,7 @@ export const register = (userData) => async (dispatch) => {
   
       const config = { headers: { "Content-Type": "multipart/form-data" } };
   
-      const { data } = await axios.post(`https://server-aoe.vercel.app/api/register`, userData, config);
+      const { data } = await axios.post(`/api/register`, userData, config);
   
       dispatch({ type: REGISTER_SUCCESS, payload: data.user });
     } catch (error) {
@@ -70,7 +70,7 @@ export const register = (userData) => async (dispatch) => {
     try {
         dispatch({ type: LOAD_USER_REQUEST });
 
-        const { data } = await axios.get(`https://server-aoe.vercel.app/api/me`);
+        const { data } = await axios.get(`/api/me`);
 
         dispatch({ type: LOAD_USER_SUCCESS, payload: data.user });
         
@@ -82,7 +82,7 @@ export const register = (userData) => async (dispatch) => {
 //Logout user
 export const logout = () => async(dispatch) => {
   try {
-      await axios.get(`https://server-aoe.vercel.app/api/logout`);
+      await axios.get(`/api/logout`);
 
       dispatch({ type: LOGOUT_SUCCESS });
       
@@ -98,7 +98,7 @@ export const updateProfile = (userData) => async (dispatch) => {
 
     const config = { headers: { "Content-Type": "multipart/form-data" } };
 
-    const { data } = await axios.put(`https://server-aoe.vercel.app/api/me/update`, userData, config);
+    const { data } = await axios.put(`/api/me/update`, userData, config);
 
     dispatch({ type: UPDATE_PROFILE_SUCCESS, payload: data.success });
   } catch (error) {
@@ -116,7 +116,7 @@ export const updatePassword = (passwords) => async (dispatch) => {
 
     const config = { headers: { "Content-Type": "application/json" } };
 
-    const { data } = await axios.put(`https://server-aoe.vercel.app/api/password/update`, passwords, config);
+    const { data } = await axios.put(`/api/password/update`, passwords, config);
 
     dispatch({ type: UPDATE_PASSWORD_SUCCESS, payload: data.success });
   } catch (error) {
@@ -135,7 +135,7 @@ export const forgotPassword = (email) => async(dispatch) => {
       const config = { headers: { "Content-Type": "application/json" } };
 
       const { data } = await axios.post(
-          `https://server-aoe.vercel.app/api/password/forgot`, email, config
+          `/api/password/forgot`, email, config
       );
 
       dispatch({ type: FORGOT_PASSWORD_SUCCESS, payload: data.message });
@@ -153,7 +153,7 @@ export const resetPassword = (token, passwords) => async(dispatch) => {
       const config = { headers: { "Content-Type": "application/json" } };
 
       const { data } = await axios.put(
-          `https://server-aoe.vercel.app/api/password/reset/${token}`, passwords, config
+          `/api/password/reset/${token}`, passwords, config
       );
 
       dispatch({ type: RESET_PASSWORD_SUCCESS, payload: data.success });
