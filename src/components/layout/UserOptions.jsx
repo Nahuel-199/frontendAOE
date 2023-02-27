@@ -15,9 +15,9 @@ import "./userOptions.css";
 import { logout } from "../../actions/userAction";
 
 
-const UserOptions = () => {
+const UserOptions = ({ user }) => {
   const { cartItems } = useSelector((state) => state.cart);
-  const { user } = useSelector((state) => state.user);
+ /*  const { user } = useSelector((state) => state.user); */
 
   const [open, setOpen] = useState(false);
   const dispatch = useDispatch();
@@ -49,8 +49,8 @@ const UserOptions = () => {
       name: "Dashboard",
       func: dashboard,
     });
-  }
- */
+  } */
+
   function dashboard() {
     navigate("/admin/dashboard");
   }
