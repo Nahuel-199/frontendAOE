@@ -2,7 +2,7 @@ import React, { Fragment, useState } from "react";
 import SpeedDial from "@mui/material/SpeedDial";
 import SpeedDialAction from "@mui/material/SpeedDialAction";
 import Backdrop from "@mui/material/Backdrop";
-/* import GridViewIcon from "@mui/icons-material/GridView"; */
+import GridViewIcon from "@mui/icons-material/GridView";
 import PersonIcon from "@mui/icons-material/Person";
 import ExitToAppIcon from "@mui/icons-material/ExitToApp";
 import ListAltIcon from "@mui/icons-material/ListAlt";
@@ -17,7 +17,7 @@ import { logout } from "../../actions/userAction";
 
 const UserOptions = ({ user }) => {
   const { cartItems } = useSelector((state) => state.cart);
- /*  const { user } = useSelector((state) => state.user); */
+  const { user } = useSelector((state) => state.user); 
 
   const [open, setOpen] = useState(false);
   const dispatch = useDispatch();
@@ -43,13 +43,13 @@ const UserOptions = ({ user }) => {
     { icon: <ExitToAppIcon />, name: "Logout", func: logoutUser },
   ];
 
-/*   if (user.role === "admin") {
+   if (user.role === "admin") {
     options.unshift({
       icon: <GridViewIcon />,
       name: "Dashboard",
       func: dashboard,
     });
-  } */
+  } 
 
   function dashboard() {
     navigate("/admin/dashboard");

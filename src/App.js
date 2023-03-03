@@ -20,12 +20,9 @@ import Payment from "./components/cart/Payment";
 import OrderSuccess from "./components/cart/OrderSuccess";
 import MyOrders from "./components/order/MyOrders";
 import OrderDetails from "./components/order/OrderDetails";
-import Dashboard from "./components/admin/Dashboard";
 import Contact from "./components/contact/Contact";
 import NotFound from "./components/layout/notFound/NotFound";
 import FailureOrder from "./components/order/FailureOrder";
-/* import ProtectedRoute from "./components/route/ProtectedRoute";
-import { useSelector } from "react-redux"; */
 
 function App() {
   //const { user, isAuthenticated } = useSelector((state) => state.user);
@@ -72,65 +69,6 @@ function App() {
       <Route exact path="/order/failed" element={<FailureOrder />} />
 
       <Route exact path="/order/:id" element={<OrderDetails />} />
-
-      <Route
-        isAdmin={true}
-        exact
-        path="/admin/dashboard"
-        element={<Dashboard />}
-      />
-     {/*  <Route
-        exact
-        path="/admin/products"
-        isAdmin={true}
-        element={ProductList}
-      />
-      <Route
-        exact
-        path="/admin/product"
-        isAdmin={true}
-        element={NewProduct}
-      />
-
-      <Route
-        exact
-        path="/admin/product/:id"
-        isAdmin={true}
-        element={UpdateProduct}
-      />
-      <Route
-        exact
-        path="/admin/orders"
-        isAdmin={true}
-        element={OrderList}
-      />
-
-      <Route
-        exact
-        path="/admin/order/:id"
-        isAdmin={true}
-        element={ProcessOrder}
-      />
-      <Route
-        exact
-        path="/admin/users"
-        isAdmin={true}
-        element={UsersList}
-      />
-
-      <Route
-        exact
-        path="/admin/user/:id"
-        isAdmin={true}
-        element={UpdateUser}
-      />
-
-      <Route
-        exact
-        path="/admin/reviews"
-        isAdmin={true}
-        element={ProductReviews}
-      /> */}
 
        <Route path="*" element={<NotFound />} />
 
