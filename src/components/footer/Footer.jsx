@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from "react-router-dom"
 import "./footer.css";
 
 const Footer = () => {
@@ -24,14 +25,14 @@ const Footer = () => {
         <div className="bottom">
             <div>
                 <h4>Categorias</h4>
-                <a href="/">Naruto</a>
-                <a href="/">Dragon Ball</a>
-                <a href="/">Demon Slayer</a>
-                <a href="/">Pokemon</a>
+                <Link to="/products">Naruto</Link>
+                <Link to="/products">Dragon Ball</Link>
+                <Link to="/products">Demon Slayer</Link>
+                <Link to="/products">Pokemon</Link>
             </div>
             <div>
                 <h4>Ayuda</h4>
-                <a href="/">Contactanos</a>
+                <Link to="/contact">Contactanos</Link>
                 <a href="/">Soporte tecnico</a>
             </div>
             <div>

@@ -22,19 +22,19 @@ export const getProduct =
        let link=""
 
        if(!link) {
-        link=`https://server-aoe.vercel.app/api/products?keyword=${keyword}&page=${currentPage}`;   
+        link=`/api/products?keyword=${keyword}&page=${currentPage}`;   
        }
 
       if (category) {
-        link = `https://server-aoe.vercel.app/api/products?keyword=${keyword}&page=${currentPage}&category=${category}`;
+        link = `/api/products?keyword=${keyword}&page=${currentPage}&category=${category}`;
       }
 
       if (br) {
-        link = `https://server-aoe.vercel.app/api/products?keyword=${keyword}&page=${currentPage}&brand=${br}`;
+        link = `/api/products?keyword=${keyword}&page=${currentPage}&brand=${br}`;
       }
 
       if (colors) {
-        link = `https://server-aoe.vercel.app/api/products?keyword=${keyword}&page=${currentPage}&color=${colors}`;
+        link = `/api/products?keyword=${keyword}&page=${currentPage}&color=${colors}`;
       }
 
 
@@ -56,7 +56,7 @@ export const getProductDetails = (id) => async (dispatch) => {
   try {
     dispatch({ type: PRODUCT_DETAILS_REQUEST });
 
-    const { data } = await axios.get(`https://server-aoe.vercel.app/api/product/${id}`);
+    const { data } = await axios.get(`/api/product/${id}`);
     console.log(data);
 
     dispatch({
@@ -80,7 +80,7 @@ export const newReview = (reviewData) => async (dispatch) => {
       headers: { "Content-Type": "application/json" },
     };
 
-    const { data } = await axios.put(`https://server-aoe.vercel.app/api/review`, reviewData, config);
+    const { data } = await axios.put(`/api/review`, reviewData, config);
 
     dispatch({
       type: NEW_REVIEW_SUCCESS,

@@ -54,5 +54,5 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "https://server-aoe.vercel.app"
+  "proxy": "https://serveraoe-production.up.railway.app"
 }
