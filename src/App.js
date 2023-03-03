@@ -25,7 +25,7 @@ import NotFound from "./components/layout/notFound/NotFound";
 import FailureOrder from "./components/order/FailureOrder";
 
 function App() {
-  //const { user, isAuthenticated } = useSelector((state) => state.user);
+
   return (
     <BrowserRouter>
 
