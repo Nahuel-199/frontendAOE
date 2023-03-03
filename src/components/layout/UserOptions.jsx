@@ -15,7 +15,7 @@ import "./userOptions.css";
 import { logout } from "../../actions/userAction";
 
 
-const UserOptions = ({ user }) => {
+const UserOptions = () => {
   const { cartItems } = useSelector((state) => state.cart);
   const { user } = useSelector((state) => state.user); 
 
