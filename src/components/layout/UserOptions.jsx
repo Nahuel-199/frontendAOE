@@ -2,22 +2,23 @@ import React, { Fragment, useState } from "react";
 import SpeedDial from "@mui/material/SpeedDial";
 import SpeedDialAction from "@mui/material/SpeedDialAction";
 import Backdrop from "@mui/material/Backdrop";
-import GridViewIcon from "@mui/icons-material/GridView";
+/* import GridViewIcon from "@mui/icons-material/GridView"; */
 import PersonIcon from "@mui/icons-material/Person";
 import ExitToAppIcon from "@mui/icons-material/ExitToApp";
 import ListAltIcon from "@mui/icons-material/ListAlt";
+import DashboardCustomizeIcon from '@mui/icons-material/DashboardCustomize';
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { useNavigate } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useDispatch, useSelector } from "react-redux";
-import "./userOptions.css";
 import { logout } from "../../actions/userAction";
+import "./userOptions.css";
+
 
 
 const UserOptions = () => {
   const { cartItems } = useSelector((state) => state.cart);
-  const { user } = useSelector((state) => state.user); 
 
   const [open, setOpen] = useState(false);
   const dispatch = useDispatch();
@@ -43,17 +44,17 @@ const UserOptions = () => {
     { icon: <ExitToAppIcon />, name: "Logout", func: logoutUser },
   ];
 
-   if (user.role === "admin") {
+/*    if (user.role === "admin") {
     options.unshift({
       icon: <GridViewIcon />,
       name: "Dashboard",
       func: dashboard,
     });
-  } 
+  }  */
 
-  function dashboard() {
+/*   function dashboard() {
     navigate("/admin/dashboard");
-  }
+  } */
 
   function home() {
     navigate("/");
@@ -87,17 +88,11 @@ const UserOptions = () => {
         ariaLabel="SpeedDial tooltip example"
         onClose={() => setOpen(false)}
         onOpen={() => setOpen(true)}
-        style={{ zIndex: "11" }}
+        style={{ zIndex: "11"}}
         open={open}
         direction="down"
         className="speedDial"
-        icon={
-          <img
-            className="speedDialIcon"
-            src={user.avatar.url ? user.avatar.url : "./Profile.png"}
-            alt="Profile"
-          />
-        }
+        icon={<DashboardCustomizeIcon />}
       >
         {options.map((item) => (
           <SpeedDialAction

@@ -11,6 +11,10 @@
     background-size: cover;
 }
 
+.MuiSpeedDial-fab{
+    color: black;
+}
+
 @media screen and (max-width: 850px) {
     .speedDial{
         top: 6vmax;
