@@ -56,7 +56,7 @@ export const getProductDetails = (id) => async (dispatch) => {
   try {
     dispatch({ type: PRODUCT_DETAILS_REQUEST });
 
-    const { data } = await axios.get(`/api/product/${id}`);
+    const { data } = await axios.get(`https://serveraoe-production.up.railway.app/api/product/${id}`);
     console.log(data);
 
     dispatch({
